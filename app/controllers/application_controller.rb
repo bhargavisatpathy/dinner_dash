@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
   end
   before_action :load_cart
 
+  def set_new_user
+    @user = User.new
+  end
+  before_action :set_new_user
+  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
@@ -29,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    current_user.admin? if !current_user.nil?
+    current_user.admin? if current_user.present?
   end
 
   helper_method :current_categories
