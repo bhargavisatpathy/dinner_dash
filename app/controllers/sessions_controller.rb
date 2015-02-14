@@ -8,10 +8,14 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:success] = "You have successfully logged in"
-      redirect_to :back
+      if user.supplier?
+        redirect_to supplier_path(user.supplier_slug(user.id))
+      else
+        redirect_to :back
+      end
     else
       flash[:errors] = "Invalid login"
-      render :new
+      redirect_to :back
     end
   end
 
