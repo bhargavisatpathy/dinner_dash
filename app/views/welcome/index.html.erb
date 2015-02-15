@@ -3,13 +3,23 @@
     <div class="col-md-12">
 
       <h1>Are you within burrito bombing range?</h1>
+      <!-- <%= ENV["MAPBOX_TOKEN"] %> -->
+      <!-- <div id="map" data-map=<%#= ENV["MAPBOX_TOKEN"] %>> -->
+      <!-- <div id="map" data-map=<%= Rails.application.secrets.mapbox_token %>> -->
+      <div id='map'></div>
+      <script>
+      L.mapbox.accessToken = '<%= Rails.application.secrets.mapbox_token %>';
+      var map = L.mapbox.map('map', 'cluhring.l1b0862b')
 
-      <div id="map">
-        <script>
-        L.mapbox.accessToken = 'pk.eyJ1IjoiY2x1aHJpbmciLCJhIjoiNWF2Z1l6ZyJ9.8peAq7kTQyvXShlVv1K82w';
-        var map = L.mapbox.map('map', 'cluhring.l1b0862b')
-        </script>
+      </script>
       </div>
     </div>
   </div>
 </div>
+<script>
+// var key = $('#map').data('map')
+// alert(key)
+// // L.mapbox.accessToken = 'pk.eyJ1IjoiY2x1aHJpbmciLCJhIjoiNWF2Z1l6ZyJ9.8peAq7kTQyvXShlVv1K82w';
+// L.mapbox.accessToken = $('#map').data('map');
+// var map = L.mapbox.map('map', 'cluhring.l1b0862b')
+</script>

@@ -1,6 +1,6 @@
 http://burrito-bombers.herokuapp.com
 
-![ScreenShot](./app/assets/images/burrito-bombers-home.pdf?raw=true "Burrito Bombers")
+![ScreenShot](./app/assets/images/burrito-bombers-home-1.png?raw=true "Burrito Bombers")
 
 Burrito Bombers is an ecommerce web application designed for a
 Downtown Denver delivery business.  This 10 day project was

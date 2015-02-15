@@ -20,6 +20,9 @@ $(document).ready(function(){
     alert("You must be logged in to check out!")
   });
 
+  // L.mapbox.accessToken = 'pk.eyJ1IjoiY2x1aHJpbmciLCJhIjoiNWF2Z1l6ZyJ9.8peAq7kTQyvXShlVv1K82w';
+  L.mapbox.accessToken = $('#map').data('map');
+  var map = L.mapbox.map('map', 'cluhring.l1b0862b')
   // $("#footer").exists(function() {
   //   $(".container").css({padding-bottom: "150px"})
   // });
